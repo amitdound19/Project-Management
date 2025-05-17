@@ -1,0 +1,94 @@
+/* General Reset */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #7244b2; /* Deep teal color */
+    padding: 10px 20px;
+    color: #ffffff; /* White text color */
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distributes space between logo, menu, and actions */
+    /* max-width: 700px; */
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    font-size: 1.6em;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 330px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Adjust gap between menu items */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allows menu to take up remaining space between logo and actions */
+    text-align: center; /* Center align menu items */
+}
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: #80cbc4; /* Light teal color for hover */
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-btn {
+    padding: 8px 12px;
+    border: none;
+    background-color: rgb(221, 48, 48); /* Teal color */
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 320px;
+    transition: background-color 0.3s;
+}
+
+.navbar-btn:hover {
+    background-color: #e78888; /* Darker teal color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-actions {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+}

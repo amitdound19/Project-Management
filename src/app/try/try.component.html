@@ -1,0 +1,129 @@
+<h2 style="text-align: center;"><i>Add Project</i></h2>
+<hr>
+<form>
+    <table>
+        <tr>
+            <td colspan="3">
+                <div class="mb-3" style="display: flex; align-items: center;">
+                    <!-- Reduce width and add margin to the input box -->
+                    <input type="text" class="form-control" formControlName="pname" id="pname"
+                        aria-describedby="emailHelp" style="height: 50px; width: 90%; margin-right: 20px;"
+                        placeholder="Enter Project Name">
+                    <!-- Button remains the same, except now there's space due to margin on the input -->
+                    <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Submit</button>
+                </div>
+            </td>
+        </tr>
+
+        <br>
+        <tr>
+            <td>
+                <div class="dropdown">
+                    <label for="projectReason"><b>Reason</b></label>
+                    <br>
+                    <select formControlName="preason" id="projectReason" class="form-control w-75">
+                        <option value="">--Select Reason--</option>
+                        <option value="Business">Business</option>
+                        <option value="Dealership">Dealership</option>
+                        <option value="Transport">Transport</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <label for="projectType"><b>Type</b></label>
+                    <br>
+                    <select formControlName="ptype" id="projectType" class="form-control w-75">
+                        <option value="">--Select Type--</option>
+                        <option value="Internal">Internal</option>
+                        <option value="External">External</option>
+                        <option value="Vendor">Vendor</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <label for="projectDivision"><b>Division</b></label>
+                    <br>
+                    <select formControlName="pdivision" id="projectDivision" class="form-control w-75">
+                        <option value="">--Select Division--</option>
+                        <option value="Filter">Filter</option>
+                        <option value="Compressor">Compressor</option>
+                        <option value="Pumps">Pumps</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                <div class="dropdown">
+                    <label for="projectCategory"><b>Category</b></label>
+                    <br>
+                    <select formControlName="pcategory" id="projectCategory" class="form-control w-75">
+                        <option value="">--Select Category--</option>
+                        <option value="Quality A">Quality A</option>
+                        <option value="Quality B">Quality B</option>
+                        <option value="Quality C">Quality C</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <label for="projectPriority"><b>Priority</b></label>
+                    <br>
+                    <select formControlName="ppriority" id="projectPriority" class="form-control w-75">
+                        <option value="">--Select Priority--</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <label for="projectDepartment"><b>Department</b></label>
+                    <br>
+                    <select formControlName="pdepartment" id="projectDepartment" class="form-control w-75">
+                        <option value="">--Select Department--</option>
+                        <option value="Strategy">Strategy</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Stores">Stores</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                <div class="mb-3">
+                    <label for="pstartdate" class="form-label"><b>Start Date (dd/mm/yyyy)</b></label>
+                    <br>
+                    <input type="text" class="form-control" formControlName="pstartdate" id="pstartdate"
+                        style="width: 200px;">
+                </div>
+            </td>
+            <td>
+                <div class="mb-3">
+                    <label for="penddate" class="form-label"><b>End Date (dd/mm/yyyy)</b></label>
+                    <br>
+                    <input type="text" class="form-control" formControlName="penddate" id="penddate"
+                        style="width: 200px;">
+                </div>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <label for="projectLocation"><b>Location</b></label>
+                    <br>
+                    <select formControlName="plocation" id="projectLocation" class="form-control w-75">
+                        <option value="">--Select Location--</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</form>

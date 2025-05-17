@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project List</title>
+    <link rel="" href="">
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td>
+                    <form action="" class="search-form">
+                        <input [(ngModel)]="searchTerm" (input)="onSearch()" id="searchbar" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </form>
+                </td>
+                <td>
+                    <select class="sort-button" aria-label="Default select example">
+                        <option selected disabled>Sort</option>
+                        <option value="1">Priority</option>
+                        <option value="2">Location</option>
+                        <option value="3">Status</option>
+                      </select>
+                </td> 
+            </tr>
+        </table>
+
+        <table class="project-table">
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Reason</th>
+                    <th>Type</th>
+                    <th>Division</th>
+                    <th>Category</th>
+                    <th>Priority</th>
+                    <th>Department</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let l of list">
+                    <td>{{l.pname}} <br> {{l.startdate}} - {{l.enddate}}</td>
+                    <td>{{l.reason}}</td>
+                    <td>{{l.type}}</td>
+                    <td>{{l.division}}</td>
+                    <td>{{l.category}}</td>
+                    <td>{{l.priority}}</td>
+                    <td>{{l.department}}</td>
+                    <td>{{l.location}}</td>
+                    <td>{{l.status}}</td>
+                    <td class="actions-cell">
+                        <button class="btn btn-start" (click)="changeStatus(l, 'Running')">Start</button><br><br>
+                        <button class="button button-close" (click)="changeStatus(l, 'Closed')">Close</button><br><br>
+                        <button class="btn btn-cancel" (click)="changeStatus(l, 'Cancelled')">Cancel</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

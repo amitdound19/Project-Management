@@ -1,0 +1,145 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Search Form Styles */
+.search-form {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#searchbar {
+    padding: 12px;
+    border: 2px solid #844caf; /* Green border */
+    border-radius: 30px; /* Rounded corners */
+    width: 300px;
+    max-width: 350px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.sort-button{
+    padding: 7px;
+    border: 2px solid #844caf; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+    width: 100px;
+    /* max-width: 350px; */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-left: 850px;
+    font-size: 15px;
+}
+
+.sort-button:focus{
+    border-color: #63388e; /* Darker green on focus */
+    box-shadow: 0 0 8px rgba(127, 68, 175, 0.5);
+}
+
+#searchbar:focus {
+    border-color: #63388e; /* Darker green on focus */
+    box-shadow: 0 0 8px rgba(127, 68, 175, 0.5);
+    outline: none;
+}
+
+/* Table Styles */
+.project-table {
+    width: 500px;
+    border-collapse: separate; /* Use separate borders for a cleaner look */
+    border-spacing: 0;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure borders are rounded */
+}
+
+.project-table th, .project-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.project-table th {
+    background-color: #8c26cb; /* Green background */
+    color: #ffffff;
+}
+
+.project-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.project-table tr:hover {
+    background-color: #f4e5fb; /* Light teal color for hover effect */
+}
+
+/* Actions Cell */
+.actions-cell {
+    text-align: center; /* Center align buttons in the cell */
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 13px; /* Rounded button corners */
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1em;
+    margin: 0 5px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-start {
+    background-color: #388e3c; /* Darker green */
+}
+
+.button-close {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 13px; /* Rounded button corners */
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1em;
+    margin: 0 5px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+    background-color: #fd0000;
+}
+
+.btn-cancel {
+    background-color: #f57c00; /* Orange color */
+}
+
+.btn-start:hover {
+    background-color: #2c6b2f; /* Even darker green on hover */
+    transform: translateY(-2px);
+}
+
+.button-close:hover {
+    background-color: #911111; /* Even darker green on hover */
+    transform: translateY(-2px);
+}
+
+.btn-cancel:hover {
+    background-color: #e65100; /* Darker orange color */
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-table th, .project-table td {
+        padding: 10px;
+    }
+
+    #searchbar {
+        width: 100%;
+    }
+}

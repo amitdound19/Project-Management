@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #6a1b9a; /* Dark violet color */
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 1px solid #6a1b9a; /* Dark violet color */
+            margin: 20px 0;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #6a1b9a; /* Dark violet color */
+        }
+
+        .form-control, .form-select {
+            border: 1px solid #d1c4e9; /* Light violet border */
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #6a1b9a; /* Dark violet border on focus */
+            outline: none;
+            box-shadow: 0 0 8px rgba(106, 27, 154, 0.3);
+        }
+
+        .btn-primary {
+            background-color: #6a1b9a; /* Dark violet background */
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #4a148c; /* Darker violet on hover */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 20px;
+        }
+
+        table td {
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+
+        .form-floating {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .form-floating input, .form-floating select {
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .form-floating label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 1rem;
+            pointer-events: none;
+            transition: all 0.2s;
+            color: #6a1b9a; /* Dark violet color */
+        }
+
+        .form-floating input:focus ~ label,
+        .form-floating input:not(:placeholder-shown) ~ label,
+        .form-floating select:focus ~ label,
+        .form-floating select:not(:placeholder-shown) ~ label {
+            top: -1rem;
+            left: 0;
+            font-size: 0.75rem;
+            color: #6a1b9a; /* Dark violet color */
+        }
+
+        .form-control.is-invalid {
+            border-color: #e57373; /* Error color */
+        }
+
+        .form-control.is-invalid:focus {
+            border-color: #e53935; /* Darker error color */
+            box-shadow: 0 0 8px rgba(229, 115, 115, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Add Project</h2>
+        <hr>
+        <form class="form" [formGroup]="saveprojectform" (ngSubmit)="saveproject()">
+            <table>
+                <tr>
+                    <td colspan="3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control is-invalid" id="projecttittle"
+                                placeholder=" " formControlName="pname">
+                            <label for="projecttittle">Enter Project Title</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="mb-3">
+                            <label for="reasonSelect" class="form-label">Reason</label>
+                            <select class="form-select" id="reasonSelect" required formControlName="reason">
+                                <option value="" selected disabled>---Select---</option>
+                                <option value="Business">Business</option>
+                                <option value="Dealership">Dealership</option>
+                                <option value="Transport">Transport</option>
+                            </select>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="mb-3">
+                            <label for="typeSelect" class="form-label">Type</label>
+                            <select class="form-select" id="typeSelect" formControlName="type">
+                                <option value="" selected disabled>---Select---</option>
+                                <option value="External">External</option>
+                                <option value="Internal">Internal</option>
+                                <option value="Vendor">Vendor</option>
+                            </select>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="mb-3">
+                            <label for="divisionSelect" class="form-label">Division</label>
+                            <select class="form-select" id="divisionSelect" formControlName="division">
+                                <option value="" selected disabled>---Select---</option>
+                                <option value="Compressor">Compressor</option>
+                                <option value="Filters">Filters</option>
+                                <option value="Pumps">Pumps</option>
+                                <option value="Glass">Glass</option>
+                                <option value="Water Heater">Water Heater</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="mb-3">
+                            <label for="categorySelect" class="form-label">Category</label>
+                            <select class="form-select" id="categorySelect" formControlName="category">
+                                <option value="" selected disabled>---Select---</option>
+                                <option value="Quality A">Quality A</option>
+                                <option value="Quality B">Quality B</option>
+                                <option value="Quality C">Quality C</option>
+                                <option value="Quality D">Quality D</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <label for="prioritySelect" class="form-label">Priority</label>
+                            <select class="form-select" id="prioritySelect" formControlName="priority">
+                                <option value="" selected disabled>---Select---</option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <label for="departmentSelect" class="form-label">Department</label>
+                            <select class="form-select" id="departmentSelect" formControlName="department">
+                                <option value="" selected disabled>---Select---</option>
+                                <option value="Strategy">Strategy</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Quality">Quality</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="Stores">Stores</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="mb-3">
+                            <label for="startDate" class="form-label">Start Date as per Project Plan</label>
+                            <input type="text" class="form-control" id="startDate" formControlName="startdate">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <label for="endDate" class="form-label">End Date as per Project Plan</label>
+                            <input type="text" class="form-control" id="endDate" formControlName="enddate">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <label for="locationSelect" class="form-label">Location</label>
+                            <select class="form-select" id="locationSelect" formControlName="location">
+                                <option value="" selected disabled>---Select---</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Banglore">Banglore</option>
+                                <option value="Chennai">Chennai</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn-primary">Submit</button>
+                    </td>
+                    <td colspan="2" style="text-align: end;">
+                        <label>Status: <b>Registered</b></label>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
